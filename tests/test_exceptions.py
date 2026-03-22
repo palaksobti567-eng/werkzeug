@@ -19,6 +19,7 @@ def test_proxy_exception():
     resp = excinfo.value.get_response({})
     assert resp is orig_resp
     assert resp.get_data() == b"Hello World"
+    assert resp.status_code == orig_resp.status_code
 
 
 @pytest.mark.parametrize(
